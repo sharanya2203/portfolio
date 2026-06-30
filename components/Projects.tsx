@@ -20,7 +20,7 @@ const projects = [
       "Deep learning application that converts black-and-white images into realistic color images.",
     tech: ["Python", "OpenCV", "TensorFlow"],
     github: "https://github.com/sharanya2203/image-colorization",
-    live: "#",
+    live: "",
     image: "/images/colorization.png",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
       "Full-stack expense tracker with authentication, budget management, and analytics dashboard.",
     tech: ["Next.js", "Node.js", "PostgreSQL"],
     github: "https://github.com/sharanya2203/fintech-tracker",
-    live: "#",
+    live: "",
     image: "/images/fintech.png",
   },
 ];
@@ -44,7 +44,7 @@ export default function Projects() {
         Featured Projects
       </h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -59,7 +59,7 @@ export default function Projects() {
             />
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold text-white">
                 {project.title}
               </h3>
 
@@ -79,23 +79,29 @@ export default function Projects() {
               </div>
 
               <div className="flex items-center gap-5 mt-6">
+
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="GitHub Repository"
                   >
                     <FaGithub className="text-3xl text-white hover:text-cyan-400 transition duration-300" />
                   </a>
                 )}
 
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ExternalLink className="w-7 h-7 text-white hover:text-cyan-400 transition duration-300" />
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Live Demo"
+                  >
+                    <ExternalLink className="w-7 h-7 text-white hover:text-cyan-400 transition duration-300" />
+                  </a>
+                )}
+
               </div>
             </div>
           </motion.div>
