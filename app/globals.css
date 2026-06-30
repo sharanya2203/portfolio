@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #030712;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  padding: 120px 8%;
+}
+
+::selection {
+  background: cyan;
+  color: black;
+}
