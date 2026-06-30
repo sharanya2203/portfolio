@@ -28,7 +28,7 @@ const projects = [
     description:
       "Full-stack expense tracker with authentication, budget management, and analytics dashboard.",
     tech: ["Next.js", "Node.js", "PostgreSQL"],
-    github: "https://github.com/sharanya2203/fintech",
+    github: "https://github.com/sharanya2203/fintech-tracker",
     live: "#",
     image: "/images/fintech.png",
   },
