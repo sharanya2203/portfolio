@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
     description:
       "A CNN-based web application that detects plant diseases from leaf images and provides treatment recommendations.",
     tech: ["Python", "Flask", "TensorFlow", "CNN"],
-    github: "https://github.com/yourusername/crop-disease",
+    github: "",
     live: "https://crop-health-guardian--sharanyaponu6.replit.app/",
     image: "/images/crop.png",
   },
@@ -37,9 +38,9 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className=" px-6 py-20 max-w-7xl mx-auto"
+      className="px-6 py-24 max-w-7xl mx-auto"
     >
-      <h2 className="text-5xl font-bold text-center mb-32">
+      <h2 className="text-5xl font-bold text-center mb-16">
         Featured Projects
       </h2>
 
@@ -48,6 +49,7 @@ export default function Projects() {
           <motion.div
             key={index}
             whileHover={{ y: -8 }}
+            transition={{ duration: 0.3 }}
             className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-lg"
           >
             <img
@@ -57,7 +59,9 @@ export default function Projects() {
             />
 
             <div className="p-6">
-              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <h3 className="text-2xl font-bold">
+                {project.title}
+              </h3>
 
               <p className="text-gray-400 mt-4">
                 {project.description}
@@ -74,13 +78,23 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="flex gap-4 mt-6">
-                <a href={project.github} target="_blank">
-                  <Code2 className="w-6 h-6 hover:text-cyan-400" />
-                </a>
+              <div className="flex items-center gap-5 mt-6">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub className="text-3xl text-white hover:text-cyan-400 transition duration-300" />
+                  </a>
+                )}
 
-                <a href={project.live} target="_blank">
-                  <ExternalLink className="w-6 h-6 hover:text-cyan-400" />
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink className="w-7 h-7 text-white hover:text-cyan-400 transition duration-300" />
                 </a>
               </div>
             </div>
